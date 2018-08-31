@@ -1,0 +1,8 @@
+@startuml
+
+    namespace ImportFrame.Data #FFF{
+    !include Classes/IData.puml
+    }
+
+
+@enduml

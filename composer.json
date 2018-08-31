@@ -1,0 +1,27 @@
+{
+    "name": "mixapiy/import-frame",
+    "license": "MIT",
+    "description": "Framework for data import",
+    "type": "library",
+    "authors": [
+        {
+            "name": "MishaK",
+            "email": "mixapiy@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpDocumentor/phpdocumentor": "^2.9",
+        "phpunit/phpunit": "5.7.27"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImportFrame\\": "src/",
+            "ImportFrameTest\\": "tests/src/"
+        }
+    },
+    "repositories": [
+        { "type": "git", "url": "https://github.com/mixapiy/import-frame" }
+    ]
+}

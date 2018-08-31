@@ -1,0 +1,10 @@
+@startuml
+
+    namespace ImportFrame.Exception #fff{
+        !include Classes/Exception.puml
+        !include Classes/IException.puml
+        !ifdef !DISABLE_RELATIONS
+        !include Relations/ExceptionRelation.puml
+        !endif
+    }
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+!ifdef !DISABLE_RELATIONS
+    !include ../Persistence/Package.puml
+    !include ../Exception/Package.puml
+!endif
+
+namespace ImportFrame.API #FFF{
+    !include Classes/APIException.puml
+    !include Classes/IAPI.puml
+    !include Classes/API.puml
+    !ifdef !DISABLE_RELATIONS
+    !include Relations/Exception.puml
+    !include Relations/API.puml
+    !endif
+    }
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+
+    title The logic of importing data using the <i> __Importer class__</i>
+
+    skinparam guillemet false
+    participant Importer << (I,#8b00ff) IImporter >>
+    participant Api << (I,#8b00ff) IAPI >>
+    participant Converter << (I,#8b00ff) IConverter >>
+    participant Strategy << (I,#8b00ff) IStrategy >>
+
+    box "private field in Importer"
+    participant Api
+    participant Converter
+    participant Strategy
+    end box
+
+    activate Importer
+    activate Api
+    activate Converter
+    activate Strategy
+
+
+    [-> Importer : Run($context)
+
+    Importer -> Importer : doRun()
+        activate Importer #green
+        Importer -> Api : run($context)
+        Api -> Importer : return $data
+        Importer -> Converter : run($data)
+        Converter -> Importer : return $formattedData
+        Importer -> Strategy : run($formattedData)
+        Strategy -> Importer : return strategyResponce
+        deactivate Importer
+
+    [<- Importer : return strategyResponce
+
+    deactivate Importer
+    deactivate Api
+    deactivate Converter
+    deactivate Strategy
+
+@enduml

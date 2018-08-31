@@ -1,0 +1,76 @@
+<?php
+
+namespace ImportFrame\Importer;
+
+use ImportFrame\API\IAPI;
+use ImportFrame\Persistence\Persistence;
+use ImportFrame\Strategy\IStrategy;
+use ImportFrame\Converter\IConverter;
+
+/**
+ * Class Importer
+ *
+ * Implements the logic of importing data via IAPI -> IConverter -> IStrategy
+ *
+ * @see IAPI, IConverter, IStrategy
+ * @author MishaK<mixapiy@yandex.ru>
+ * @version 1.0
+ * @package ImportFrame
+ */
+class Importer extends Persistence implements IImporter
+{
+    /**
+     * Object variable to interact with the external interface
+     * @see Importer::__construct(), Importer::doRun()
+     * @access private
+     * @var IAPI
+     */
+    private $api;
+
+    /**
+     * Object variable for the application data retrieved from the API
+     * @see Importer::__construct(), Importer::doRun()
+     * @access private
+     * @var IStrategy
+     */
+    private $strategy;
+
+    /**
+     * An object variable that converts the Format of data retrieved from the API for the strategy
+     * @see Importer::__construct(), Importer::doRun()
+     * @access private
+     * @var IConverter
+     */
+    private $converter;
+
+    /**
+     * Importer constructor.
+     * @param IAPI $api
+     * @param IStrategy $strategy
+     * @param IConverter $converter
+     * @uses Importer::$converter, Importer::$strategy, Importer::$api to place data
+     */
+    public function __construct(IAPI $api, IStrategy $strategy, IConverter $converter)
+    {
+        $this->api = $api;
+        $this->strategy = $strategy;
+        $this->converter = $converter;
+    }
+
+    /**
+     * implements the logic of importing data into the application
+     * @uses Importer::$converter, Importer::$strategy, Importer::$api, Importer::$runResult, Importer::$context
+     */
+    protected function doRun()
+    {
+        $this->setRunResult(
+            $this->strategy->run(
+                $this->converter->run(
+                    $this->api->run(
+                        $this->context
+                    )
+                )
+            )
+        );
+    }
+}

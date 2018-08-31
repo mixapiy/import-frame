@@ -1,0 +1,8 @@
+@startuml
+
+interface IPersistence {
++ run(IData $context) : IData
+}
+
+
+@enduml

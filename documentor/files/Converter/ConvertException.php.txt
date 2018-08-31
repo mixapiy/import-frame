@@ -1,0 +1,10 @@
+<?php
+
+namespace ImportFrame\Converter;
+
+use ImportFrame\Exception\ImportException;
+
+class ConvertException extends ImportException
+{
+
+}

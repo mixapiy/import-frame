@@ -1,0 +1,8 @@
+@startuml
+
+        !include ../Classes/Persistence.puml
+        !include ../Classes/IPersistence.puml
+
+        IPersistence <|.. Persistence
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+    !include ../Classes/ConverterException.puml
+    !define DISABLE_RELATIONS
+        !include ../../Exception/Package.puml
+    !undef DISABLE_RELATIONS
+
+    ImportFrame.Exception.ImportException <|-- ConverterException
+
+@enduml

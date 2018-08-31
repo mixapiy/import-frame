@@ -1,0 +1,27 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+!ifdef !DISABLE_RELATIONS
+    !include ../Exception/Package.puml
+!endif
+
+!ifdef !DISABLE_AGGREGATE_RELATION
+    !include ../Data/Package.puml
+!endif
+
+namespace ImportFrame.Persistence #FFF{
+    !include Classes/Persistence.puml
+    !include Classes/IPersistence.puml
+    !ifdef !DISABLE_RELATIONS
+        !include Relations/Persistence.puml
+        !include Relations/Exception.puml
+    !endif
+
+    !ifdef !DISABLE_AGGREGATE_RELATION
+        !include Relations/Persistence_dataModel.puml
+    !endif
+
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+
+class Importer{
+-$converter : IConverter;
+-$api : IAPI;
+-$strategy : IStrategy;
+
++__constructor(IAPI $api, IConverter $converter, IStrategy $strategy);
+#doRun();
+}
+
+@enduml

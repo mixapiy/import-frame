@@ -1,0 +1,11 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+    !include ../../Data/Package.puml
+    !include ../Classes/Persistence.puml
+
+    Persistence "1" *-- "2" ImportFrame.Data.IData : include
+
+@enduml

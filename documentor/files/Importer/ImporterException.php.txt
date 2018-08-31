@@ -1,0 +1,15 @@
+<?php
+namespace ImportFrame\Importer;
+
+use ImportFrame\Exception\ImportException;
+
+/**
+ *
+ * Exception is the class for
+ * Importer exceptions.
+ */
+
+class ImporterException extends ImportException
+{
+
+}

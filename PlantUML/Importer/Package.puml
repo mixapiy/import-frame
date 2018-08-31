@@ -1,0 +1,25 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+!ifdef !DISABLE_RELATIONS
+    !include ../Persistence/Package.puml
+    !include ../Exception/Package.puml
+!endif
+
+
+namespace ImportFrame.Importer #FFF{
+    !include Classes/Importer.puml
+    !include Classes/ImporterException.puml
+    !include Classes/IImporter.puml
+    !ifdef !DISABLE_RELATIONS
+        !include Relations/Importer.puml
+        !include Relations/Exception.puml
+    !endif
+    !ifdef !DISABLE_AGGREGATE_RELATION
+        !include Relations/Importer_DataModel.puml
+    !endif
+    }
+
+@enduml

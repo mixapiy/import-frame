@@ -1,0 +1,16 @@
+@startuml
+
+abstract class Persistence{
+        # $context : IData
+        # $runResult : IData
+        # {abstract} doRun();
+        # afterRun();
+        # beforeRun();
+        #setResult(IData $runResult);
+        #setContext(IData $context);
+        +run(IData $context) : IData;
+        +getResult(): IData;
+        +getContext(): IData;
+}
+
+@enduml

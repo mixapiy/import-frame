@@ -1,0 +1,10 @@
+@startuml
+
+    !include ../Classes/StrategyException.puml
+    !define DISABLE_RELATIONS
+    !include ../../Exception/Package.puml
+    !undef DISABLE_RELATIONS
+
+    ImportFrame.Exception.ImportException <|-- StrategyException
+
+@enduml

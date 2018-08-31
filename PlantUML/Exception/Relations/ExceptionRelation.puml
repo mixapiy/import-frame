@@ -1,0 +1,7 @@
+@startuml
+
+    !include ../Classes/Exception.puml
+    !include ../Classes/IException.puml
+
+    IException <|.. ImportException
+@enduml

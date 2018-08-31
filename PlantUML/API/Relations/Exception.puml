@@ -1,0 +1,10 @@
+@startuml
+
+    !include ../Classes/APIException.puml
+    !define DISABLE_RELATIONS
+        !include ../../Exception/Package.puml
+    !undef DISABLE_RELATIONS
+
+    ImportFrame.Exception.ImportException <|-- APIException
+
+@enduml

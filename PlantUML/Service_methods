@@ -1,0 +1,16 @@
+hide members                            -> членов классов
+show protected field                    -> показать защищенные поля
+hide field                              -> скрыть поля
+hide protected methods                  -> скрыть защищенные методы
+show methods                            -> показать методы
+!define DISABLE_RELATIONS               -> отключить показ связей
+!define DISABLE_AGGREGATE_RELATION      -> отключить показ агрегации
+
+--Скрыть фрейм--
+hide ImportFrame.Exception
+hide ImportFrame.Strategy
+hide ImportFrame.Importer
+hide ImportFrame.API
+hide ImportFrame.Converter
+hide ImportFrame.Data
+hide ImportFrame.Persistence

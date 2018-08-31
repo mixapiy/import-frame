@@ -1,0 +1,31 @@
+@startuml
+
+'----services methods--------
+'hide members
+'show protected field
+'hide field
+'hide protected methods
+'show methods
+'!define DISABLE_RELATIONS
+'!define DISABLE_AGGREGATE_RELATION
+'hide ImportFrame.Exception
+'hide ImportFrame.Strategy
+'hide ImportFrame.Importer
+'hide ImportFrame.API
+'hide ImportFrame.Converter
+'hide ImportFrame.Data
+'hide ImportFrame.Persistence
+'----services methods--------
+
+Package ImportFrame #DDD {
+
+    !include Data/Package.puml
+    !include Exception/Package.puml
+    !include Persistence/Package.puml
+    !include API/Package.puml
+    !include Converter/Package.puml
+    !include Strategy/Package.puml
+    !include Importer/Package.puml
+    }
+
+@enduml

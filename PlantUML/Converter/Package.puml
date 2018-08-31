@@ -1,0 +1,21 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+!ifdef !DISABLE_RELATIONS
+    !include ../Persistence/Package.puml
+    !include ../Exception/Package.puml
+!endif
+
+namespace ImportFrame.Converter #FFF{
+    !include Classes/Converter.puml
+    !include Classes/ConverterException.puml
+    !include Classes/IConverter.puml
+    !ifdef !DISABLE_RELATIONS
+    !include Relations/Converter.puml
+    !include Relations/Exception.puml
+    !endif
+    }
+
+@enduml

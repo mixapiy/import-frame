@@ -1,0 +1,14 @@
+@startuml
+
+!include ../Classes/IAPI.puml
+!include ../Classes/API.puml
+!include ../../Persistence/Package.puml
+
+ImportFrame.Persistence.IPersistence <|-- IAPI
+IAPI <|.. API
+ImportFrame.Persistence.Persistence <|-- API
+
+
+
+
+@enduml

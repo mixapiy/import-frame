@@ -1,0 +1,13 @@
+@startuml
+
+!include ../Classes/IStrategy.puml
+!include ../Classes/Strategy.puml
+!include ../../Persistence/Package.puml
+
+ImportFrame.Persistence.Persistence <|-- Strategy
+ImportFrame.Persistence.IPersistence <|-- IStrategy
+IStrategy <|.. Strategy
+
+
+
+@enduml

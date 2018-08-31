@@ -1,0 +1,13 @@
+@startuml
+
+!include ../Classes/IConverter.puml
+!include ../Classes/Converter.puml
+!include ../../Persistence/Package.puml
+
+ImportFrame.Persistence.IPersistence <|-- IConverter
+ImportFrame.Persistence.Persistence <|-- Converter
+IConverter <|.. Converter
+
+
+
+@enduml

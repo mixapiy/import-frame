@@ -1,0 +1,16 @@
+<?php
+
+namespace ImportFrame\API;
+
+use ImportFrame\Exception\ImportException;
+
+/**
+ *
+ * Exception is the class for
+ * API exceptions.
+ */
+
+class APIException extends ImportException
+{
+
+}

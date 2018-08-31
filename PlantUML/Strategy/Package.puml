@@ -1,0 +1,20 @@
+@startuml
+
+'!define DISABLE_AGGREGATE_RELATION
+'!define DISABLE_RELATIONS
+
+!ifdef !DISABLE_RELATIONS
+    !include ../Persistence/Package.puml
+    !include ../Exception/Package.puml
+!endif
+
+    namespace ImportFrame.Strategy #FFF{
+        !include Classes/Strategy.puml
+        !include Classes/StrategyException.puml
+        !include Classes/IStrategy.puml
+        !ifdef !DISABLE_RELATIONS
+        !include Relations/Strategy.puml
+        !include Relations/Exception.puml
+        !endif
+        }
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+
+      title The logic of the __run()__ method
+
+       skinparam guillemet false
+       participant Persistence << (I,#8b00ff) IPersistence >>
+       
+
+       activate Persistence      
+
+
+       [-> Persistence : Run($context)
+
+       Persistence -> Persistence : setContext($context)
+       note right
+         $this->data = $context
+       end note
+
+       Persistence -> Persistence : beforRun()
+       activate Persistence #green
+       note left
+         logic before execute
+       end note
+       deactivate Persistence
+
+       Persistence -> Persistence : doRun()
+       activate Persistence #green
+       note left
+                logic execute, must be set result
+                in $this->runResult
+       end note
+       deactivate Persistence
+
+       Persistence -> Persistence : afterRun()
+       activate Persistence #green
+            note left
+                logic after execute
+            end note
+       deactivate Persistence
+
+       Persistence -> Persistence : getResult()
+       activate Persistence #green
+             note right
+                 return run result
+                     $this->runResult
+             end note
+       deactivate Persistence
+
+       [<- Persistence : return runResult
+
+       deactivate Persistence
+       
+@enduml

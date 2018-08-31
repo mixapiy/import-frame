@@ -1,0 +1,8 @@
+@startuml
+
+    !include ../Classes/ImporterException.puml
+    !include ../../Exception/Package.puml
+
+    ImportFrame.Exception.ImportException <|-- ImporterException
+
+@enduml

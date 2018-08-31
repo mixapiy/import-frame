@@ -1,0 +1,14 @@
+<?php
+
+namespace ImportFrame\Exception;
+
+/**
+ *
+ * Exception is the base class for
+ * all Strategy exceptions.
+ */
+
+class StrategyException extends ImportException
+{
+
+}

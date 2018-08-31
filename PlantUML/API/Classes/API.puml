@@ -1,0 +1,7 @@
+@startuml
+
+
+abstract class API {
+}
+
+@enduml

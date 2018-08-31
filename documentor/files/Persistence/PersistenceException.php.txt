@@ -1,0 +1,16 @@
+<?php
+namespace ImportFrame\Persistence;
+
+
+use ImportFrame\Exception\ImportException;
+
+/**
+ *
+ * Exception is the class for
+ * Persistence exceptions.
+ */
+
+class PersistenceException extends ImportException
+{
+
+}

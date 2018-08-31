@@ -1,0 +1,7 @@
+@startuml
+
+    !include ../Classes/PersistenceException.puml
+    !include ../../Exception/Package.puml
+
+    ImportFrame.Exception.ImportException <|-- PersistenceException
+@enduml

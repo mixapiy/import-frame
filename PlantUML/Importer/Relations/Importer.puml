@@ -1,0 +1,12 @@
+@startuml
+
+!include ../Classes/IImporter.puml
+!include ../Classes/Importer.puml
+!include ../../Persistence/Package.puml
+
+ImportFrame.Persistence.IPersistence <|-- IImporter
+ImportFrame.Persistence.Persistence <|-- Importer
+IImporter <|.. Importer
+
+
+@enduml
