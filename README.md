@@ -1,12 +1,12 @@
-#import-frame
+# import-frame
 
 Basic framework for data import.
 
 
-##Why?
+## Why?
 Allows you to structure the process of requesting data from external sources, adapt them to the format to work in your application, as well as to execute a strategy for processing the received data.
 
-##Usage
+## Usage
 
 You must implement the IAPI, IConverter and IStrategy, and then create an instance of the Importer object and call the run method passing the context for IAPI.
 
@@ -19,7 +19,7 @@ php
    print_r($strategyResponce);
 ```
 
-1.[Documents](./documentor/index.html)
+1.[Documents](./documentor/)
 
 2.[UML](./PlantUML)
 
